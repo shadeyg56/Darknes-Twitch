@@ -1,10 +1,12 @@
 import discord
 from discord.ext import commands as dcommands
 from twitchio import commands as tcommands
-import bot
-import twitch
+import subprocess
 
-#calls startup functions from bots
-bot.start()
-twith.start()
+scripts = ['/home/pi/Desktop/Darkness-Twitch/bot.py', 'home/pi/Desktop/Darkness-Twitch/twitch.py']
+for script in scripts:
+  #calls startup functions from bots
+  p = subprocess.Popen([script, "ArcView"], shell=True, stdin=PIPE, stdout=PIPE)
+  output = p.communicate()
+  print(output[0])
 
