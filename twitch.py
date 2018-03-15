@@ -15,5 +15,4 @@ class Twitch_Bot(tcommands.TwitchBot):
     print('Logged into Twitch')
     
     
-def start():
-    Twitch_Bot().run()
+Twitch_Bot().run()
