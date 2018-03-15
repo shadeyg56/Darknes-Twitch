@@ -6,12 +6,11 @@ import asyncio
 async def discord_start():
   bot = Bot
   bot.start(private.DISCORD_TOKEN)
-  bot.load_extension('twitch.twitch')
 
 class Bot(dcommands.Bot):
   def __init__(self):
     super().__init__(command_prefix=dcommands.when_mentioned_or('!'))
-    
+  self.load_extension('twitch.twitch')
   async def on_ready():
       print('------------------------------------')
       print('THE BOT IS ONLINE')
