@@ -13,5 +13,5 @@ class Twitch_Bot(tcommands.TwitchBot):
     
 Twitch_Bot().run()
 
-bot = dcommands.Bot(command_prefix=when_command_mentioned.or('!'))
+bot = dcommands.Bot(command_prefix=dcommands.when_command_mentioned_or('!'))
 bot.run(private.DISCORD_TOKEN)
