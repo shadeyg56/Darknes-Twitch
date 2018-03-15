@@ -1,6 +1,7 @@
 from twitchio import commands as tcommands
 import discord
 from discord.ext import commands as dcommands
+import private
 
 class Twitch():
   def __init___(self, bot):
