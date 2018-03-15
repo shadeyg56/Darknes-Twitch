@@ -17,5 +17,4 @@ async def on_ready():
   print('DV: {}'.format(discord.__version__))
   await bot.change_presence(activity=discord.Streaming(name='Watching over the chat until next stream', url='https://www.twitch.tv/shadeyg56'))
 
-def start():
-  bot.run(private.DISCORD_TOKEN)
+bot.run(private.DISCORD_TOKEN)
