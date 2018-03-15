@@ -6,7 +6,7 @@ import private
 class Twitch():
   def __init__(self, bot):
     self.bot = bot
-    self.bot.loop.create_task(Twitch_Bot().run())
+  self.bot.loop.create_task(Twitch_Bot().run())
     
 class Twitch_Bot(tcommands.TwitchBot):
   def __init__(self):
