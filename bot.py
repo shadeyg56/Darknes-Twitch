@@ -6,7 +6,7 @@ import asyncio
 
 bot = dcommands.Bot(command_prefix=dcommands.when_mentioned_or('!'))
 
-@bot.event()
+@bot.event
 async def on_ready():
   print('------------------------------------')
   print('THE BOT IS ONLINE')
