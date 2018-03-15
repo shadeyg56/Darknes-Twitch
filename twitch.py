@@ -3,7 +3,7 @@ import discord
 from discord.ext import commands as dcommands
 import private
 
-class Twitch():
+class Twitch_discord():
   def __init___(self, bot):
     self.bot = bot
     self.bot.loop.create_task(Twitch_Bot().run())
@@ -20,4 +20,4 @@ class Twitch_Bot(tcommands.TwitchBot):
     
 
 def setup(bot):
-  bot.add_cog(Twitch(bot))
+  bot.add_cog(Twitch_discord(bot))
