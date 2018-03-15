@@ -21,11 +21,11 @@ class Twitch_Bot(tcommands.TwitchBot):
 
 async def run():
   bot = Bot
-  bot.start(private.DISCORD_TOKEN
+  bot.start(private.DISCORD_TOKEN)
 
 class Bot(dcommands.Bot):
   def __init__(self):
-    super().__init__(command_prefix=dcommands.when_command_mentioned_or('!'))
+    super().__init__(command_prefix=dcommands.when_mentioned_or('!'))
     
   async def on_ready():
       print('------------------------------------')
