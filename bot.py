@@ -19,7 +19,7 @@ class Twitch_Bot(tcommands.TwitchBot):
     print('Logged into Twitch')
     
 
-async def run():
+async def discord_start():
   bot = Bot
   bot.start(private.DISCORD_TOKEN)
 
@@ -38,5 +38,5 @@ class Bot(dcommands.Bot):
       await bot.change_presence(activity=discord.Streaming(name='watching over the chat until next stream', url='https://www.twitch.tv/shadeyg56'))
 loop = asyncio.get_event_loop()
 loop2 = asyncio.get_event_loop()
-loop.run_until_complete(run())
+loop.run_until_complete(discord_start())
 loop2.run_until_complete(twitch())
