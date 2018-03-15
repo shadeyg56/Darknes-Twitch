@@ -1,25 +1,12 @@
 import discord
 from discord.ext import commands as dcommands
-from twitchio import commands as tcommands
 import private
 import asyncio
-
-
-class Twitch_Bot(tcommands.TwitchBot):
-  def __init__(self):
-    super().__init__(prefix='!', nick='Darkness', token=private.TWITCH_TOKEN, initial_channels=['shadeyg56'])
-    
-  @tcommands.twitch_command()
-  async def test(self, ctx):
-    await ctx.send('I am alive')
-    
-  async def event_ready(self):
-    print('Logged into Twitch')
-    
 
 async def discord_start():
   bot = Bot
   bot.start(private.DISCORD_TOKEN)
+  bot.load_extension('twitch')
 
 class Bot(dcommands.Bot):
   def __init__(self):
@@ -33,7 +20,6 @@ class Bot(dcommands.Bot):
       print('Author: shadeyg56')
       print("ID: {}".format(bot.user.id))
       print('DV: {}'.format(discord.__version__))
-      await bot.change_presence(activity=discord.Streaming(name='watching over the chat until next stream', url='https://www.twitch.tv/shadeyg56'))
+      await bot.change_presence(activity=discord.Streaming(name='Watching over the chat until next stream', url='https://www.twitch.tv/shadeyg56'))
 loop = asyncio.get_event_loop()
 loop.run_until_complete(discord_start())
-Twitch_Bot().run()
