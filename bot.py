@@ -18,7 +18,7 @@ async def on_ready():
   await bot.change_presence(activity=discord.Streaming(name='Watching over the chat until next stream', url='https://www.twitch.tv/shadeyg56'))
 
 async def load_twitch():
-  await bot.wait_until_ready(()
+  await bot.wait_until_ready()
   bot.load_extension('twitch')
   try:
     print('Loaded: twitch')
