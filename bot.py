@@ -17,5 +17,9 @@ async def on_ready():
   print('DV: {}'.format(discord.__version__))
   await bot.change_presence(activity=discord.Streaming(name='Watching over the chat until next stream', url='https://www.twitch.tv/shadeyg56'))
 
+async def load_twitch():
+  bot.load_extension('twitch')
+
 bot.run(private.DISCORD_TOKEN)
-bot.load_extension('twitch')
+loop = asyncio.get_event_loop()
+loop.run_until_complete(load_twitch())
