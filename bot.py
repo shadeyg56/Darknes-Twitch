@@ -19,6 +19,10 @@ async def on_ready():
 
 async def load_twitch():
   bot.load_extension('twitch')
+  try:
+    print('Loaded: twitch')
+  except Exception as e:
+    print(f'Error: {e}')
 
 bot.run(private.DISCORD_TOKEN)
 loop = asyncio.get_event_loop()
