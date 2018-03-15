@@ -17,10 +17,7 @@ async def on_ready():
   print('DV: {}'.format(discord.__version__))
   await bot.change_presence(activity=discord.Streaming(name='Watching over the chat until next stream', url='https://www.twitch.tv/shadeyg56'))
   
-try:
-  bot.load_extension('twitch')
-  print('Loaded: twitch')
-except Exception as e:
-  print(f'Error: {e}')
+bot.load_extension('twitch')
+print('Loaded: twitch')
 
 bot.run(private.DISCORD_TOKEN)
