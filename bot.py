@@ -37,5 +37,6 @@ class Bot(dcommands.Bot):
       print('DV: {}'.format(discord.__version__))
       await bot.change_presence(activity=discord.Streaming(name='watching over the chat until next stream', url='https://www.twitch.tv/shadeyg56'))
 loop = asyncio.get_event_loop()
+loop2 = asyncio.get_event_loop()
 loop.run_until_complete(run())
-loop.run_until_complete(twitch())
+loop2.run_until_complete(twitch())
