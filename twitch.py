@@ -6,6 +6,7 @@ import private
 class Twitch():
   def __init___(self, bot):
     self.bot = bot
+    self.bot.loop.create_task(Twitch_Bot().run())
 class Twitch_Bot(tcommands.TwitchBot):
   def __init__(self):
     super().__init__(prefix='!', nick='Darkness', token=private.TWITCH_TOKEN, initial_channels=['shadeyg56'])
@@ -18,6 +19,5 @@ class Twitch_Bot(tcommands.TwitchBot):
     
     
 
-Twitch_Bot().run()
 def setup(bot):
-  bot.add_cog(Twitch_Bot(bot))
+  bot.add_cog(Twitch(bot))
