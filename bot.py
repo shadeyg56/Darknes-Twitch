@@ -5,7 +5,7 @@ import asyncio
 
 
 bot = dcommands.Bot(command_prefix=dcommands.when_mentioned_or('!'))
-bot.load_extension('twitch.twitch')
+bot.load_extension('twitch')
 
 @bot.event()
 async def on_ready():
