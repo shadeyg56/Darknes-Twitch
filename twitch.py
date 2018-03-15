@@ -22,4 +22,4 @@ class Twitch_Bot(tcommands.TwitchBot):
 def setup(bot):
   bot.add_cog(Twitch(bot))
 
-Twitch_Bot().start()
+Twitch_Bot().run()
