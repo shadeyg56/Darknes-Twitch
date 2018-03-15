@@ -4,6 +4,9 @@ from twitchio import commands as tcommands
 import private
 import asyncio
 
+async def twitch():
+  Twitch_Bot().run()
+
 class Twitch_Bot(tcommands.TwitchBot):
   def __init__(self):
     super().__init__(prefix='!', nick='Darkness', token=private.TWITCH_TOKEN, initial_channels=['shadeyg56'])
@@ -15,7 +18,6 @@ class Twitch_Bot(tcommands.TwitchBot):
   async def event_ready(self):
     print('Logged into Twitch')
     
-Twitch_Bot().run()
 
 async def run():
   bot = Bot
@@ -36,4 +38,4 @@ class Bot(dcommands.Bot):
       await bot.change_presence(activity=discord.Streaming(name='watching over the chat until next stream', url='https://www.twitch.tv/shadeyg56'))
 loop = asyncio.get_event_loop()
 loop.run_until_complete(run())
-
+loop.run_until_complete(twitch())
