@@ -4,7 +4,7 @@ import private
 import asyncio
 
 
-bot = (command_prefix=dcommands.when_mentioned_or('!'))
+bot = dcommands.Bot(command_prefix=dcommands.when_mentioned_or('!'))
 bot.load_extension('twitch.twitch')
 
 @bot.event()
