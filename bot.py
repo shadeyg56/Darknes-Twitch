@@ -6,7 +6,7 @@ import asyncio
 async def discord_start():
   bot = Bot
   bot.start(private.DISCORD_TOKEN)
-  bot.load_extension('twitch')
+  bot.load_extension('/twitch')
 
 class Bot(dcommands.Bot):
   def __init__(self):
