@@ -17,4 +17,4 @@ class Twitch_Bot(tcommands.TwitchBot):
     
 def setup(bot):
     bot.add_cog(Twitch_Bot(bot))
-Twitch_Bot().run()
+self.run()
