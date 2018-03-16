@@ -14,7 +14,7 @@ def setup(bot):
     bot.add_cog(Twitch(bot))
     
 class Twitch_Bot(tcommands.TwitchBot):
-  def __init__(self, bot):
+  def __init__(self):
     super().__init__(prefix='!', nick='Darkness', token=private.TWITCH_TOKEN, initial_channels=['shadeyg56'])
     
   @tcommands.twitch_command()
