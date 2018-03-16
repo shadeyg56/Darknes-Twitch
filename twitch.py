@@ -2,7 +2,7 @@ from twitchio import commands as tcommands
 import discord
 from discord.ext import commands as dcommands
 import private
-from dcommands import Bot as bot
+from discord.ext.commands import Bot as bot
 class Twitch_Bot(tcommands.TwitchBot):
   def __init__(self):
     super().__init__(prefix='!', nick='Darkness', token=private.TWITCH_TOKEN, initial_channels=['shadeyg56'])
