@@ -16,5 +16,5 @@ class Twitch_Bot(tcommands.TwitchBot):
     print('Logged into Twitch')
     
 def setup(bot):
-    bot.add_cog(Twitch_Bot(bot)
+    bot.add_cog(Twitch_Bot(bot))
 Twitch_Bot().run()
