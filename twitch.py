@@ -2,16 +2,6 @@ from twitchio import commands as tcommands
 import discord
 from discord.ext import commands as dcommands
 import private
-class Twitch():
-    def __init__(self, bot):
-        self.bot = bot
-        
-    @dcommands.command()
-    async def test(self, ctx):
-        await ctx.send('I am alive')
-    
-def setup(bot):
-    bot.add_cog(Twitch(bot))
     
 class Twitch_Bot(tcommands.TwitchBot):
   def __init__(self):
