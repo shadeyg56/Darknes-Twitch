@@ -21,14 +21,13 @@ async def on_ready():
 async def is_live():
 	await bot.wait_until_ready()
 	await asyncio.sleep(1)
-	with open("communication.json") as f:
-		data = json.load(f)
-	try:
-		if data["is_live"] == True:
-			await bot.change_presence(activity=discord.Streaming(name="Success!", url="https://twitch.tv/shadeyg56"))
-	except:
-		print("Daddy isn't live ;(")
-	finally:
+	while not bot.loop.is_closed():
+		with open("communication.json") as f:
+			data = json.load(f)
+			if data["is_live"] == True:
+				await bot.change_presence(activity=discord.Streaming(name="Success!", url="https://twitch.tv/shadeyg56"))
+			else:
+				print("Daddy isn't live ;(")
 		await asyncio.sleep(5)
 
 
