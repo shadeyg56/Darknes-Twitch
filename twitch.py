@@ -31,7 +31,7 @@ class Twitch_Bot(tcommands.TwitchBot):
       else:
         raise SyntaxError
     except:
-      pass
+      print("Daddy isn't live ;(")
     await asyncio.sleep(5)
 
   
