@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands as dcommands
 import private
 import asyncio
+import json
 
 
 bot = dcommands.Bot(command_prefix=dcommands.when_mentioned_or('!'))
