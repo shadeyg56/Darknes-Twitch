@@ -20,6 +20,7 @@ async def on_ready():
 
 async def is_live():
 	await bot.wait_until_ready()
+	await asyncio.sleep(1)
 	with open("communication.json") as f:
 		data = json.load(f)
 	if data["is_live"] == True:
