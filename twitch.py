@@ -3,6 +3,7 @@ import discord
 from discord.ext import commands as dcommands
 import private
 import json
+import asyncio
 
 class Twitch_Bot(tcommands.TwitchBot):
   def __init__(self):
@@ -15,13 +16,18 @@ class Twitch_Bot(tcommands.TwitchBot):
   async def event_ready(self):
     print('Logged into Twitch')
    
-  async def is_live('shadeyg56'):
-    print('Daddy is live')
+  async def live():
     with open('communication.json') as f:
       data = json.load(f)
-    data["is_live"] = True
-    data = json.dumps(data, indent=4)
-    with open('communication.json', 'w') as f:
-      f.write(data)
+    x = await self.is_live("shadeyg56")
+    if x == True:
+      print('Daddy is live')
+      print(self.get_streams("shadeyg56"))
+      data["is_live"] = True
+      data = json.dumps(data, indent=4)
+      with open('communication.json', 'w') as f:
+        f.write(data)
   
+loop = asyncio.get_event_loop()
+loop.run_forever(live())
 Twitch_Bot().run()
