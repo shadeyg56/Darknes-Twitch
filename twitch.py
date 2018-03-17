@@ -16,13 +16,13 @@ class Twitch_Bot(tcommands.TwitchBot):
   async def event_ready(self):
     print('Logged into Twitch')
    
-  async def live():
+  async def live(self):
     with open('communication.json') as f:
       data = json.load(f)
-    x = await Twitch_Bot().is_live("shadeyg56")
+    x = await self.is_live("shadeyg56")
     if x == True:
       print('Daddy is live')
-      print(Twitch_Bot().get_streams("shadeyg56"))
+      print(self.get_streams("shadeyg56"))
       data["is_live"] = True
       data = json.dumps(data, indent=4)
       with open('communication.json', 'w') as f:
