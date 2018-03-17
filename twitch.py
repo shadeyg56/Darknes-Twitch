@@ -30,6 +30,8 @@ class Twitch_Bot(tcommands.TwitchBot):
   async def eightball(self, ctx, *, question:str):
     try:
       await ctx.send(f"{ctx.message.author}, Question: {question}, Answer: {random.choice(self.answers)}")
+    except:
+      await ctx.send(f"{ctx.message.author}, you must provide a question")
 
   async def live(self):
     with open('communication.json') as f:
