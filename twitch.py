@@ -22,13 +22,17 @@ class Twitch_Bot(tcommands.TwitchBot):
     with open('communication.json') as f:
       data = json.load(f)
     x = await self.is_live("shadeyg56")
-    if x == True:
-      print('Daddy is live')
-      print(self.get_streams("shadeyg56"))
-      data["is_live"] = True
-      data = json.dumps(data, indent=4)
-      with open('communication.json', 'w') as f:
-        f.write(data)
+    try:
+      if x == True:
+        print('Daddy is live')
+        print(self.get_streams("shadeyg56"))
+        data["is_live"] = True
+        data = json.dumps(data, indent=4)
+        with open('communication.json', 'w') as f:
+          f.write(data)
+    except:
+      pass
+    await asyncio.sleep(5)
 
   
   
