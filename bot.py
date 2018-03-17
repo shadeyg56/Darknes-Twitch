@@ -19,7 +19,7 @@ async def on_ready():
   await bot.change_presence(activity=discord.Streaming(name='Watching over the chat until next stream', url='https://www.twitch.tv/shadeyg56'))
 
 async def is_live():
-	await bot.wait_until_ready
+	await bot.wait_until_ready()
 	with open("communication.json") as f:
 		data = json.load(f)
 	if data["is_live"] == True:
