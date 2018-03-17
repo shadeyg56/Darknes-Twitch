@@ -37,7 +37,7 @@ class Twitch_Bot(tcommands.TwitchBot):
     with open('communication.json') as f:
       data = json.load(f)
     x = await self.is_live("shadeyg56")
-    try:
+    while not self.is_closed():
       if x == True:
         print('Daddy is live')
         print(self.get_streams("shadeyg56"))
@@ -46,10 +46,8 @@ class Twitch_Bot(tcommands.TwitchBot):
         with open('communication.json', 'w') as f:
           f.write(data)
       else:
-        raise SyntaxError
-    except:
-      print("Daddy isn't live ;(")
-    await asyncio.sleep(5)
+        print("Daddy isn't live ;(")
+        await asyncio.sleep(5)
 
   
   
