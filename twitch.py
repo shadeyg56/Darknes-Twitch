@@ -28,6 +28,6 @@ class Twitch_Bot(tcommands.TwitchBot):
       with open('communication.json', 'w') as f:
         f.write(data)
   
-loop = asyncio.get_event_loop()
-loop.run_forever(live())
+  loop = asyncio.get_event_loop()
+  loop.run_forever(live())
 Twitch_Bot().run()
