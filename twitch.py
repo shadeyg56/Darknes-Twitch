@@ -8,7 +8,7 @@ import asyncio
 class Twitch_Bot(tcommands.TwitchBot):
   def __init__(self):
     super().__init__(prefix='!', nick='Darkness', token=private.TWITCH_TOKEN, initial_channels=['shadeyg56'])
-    self.bot = Twitch_Bot()
+    bot = Twitch_Bot()
 
   @tcommands.twitch_command()
   async def test(self, ctx):
@@ -20,10 +20,10 @@ class Twitch_Bot(tcommands.TwitchBot):
   async def live():
     with open('communication.json') as f:
       data = json.load(f)
-    x = await self.bot.is_live("shadeyg56")
+    x = await bot.is_live("shadeyg56")
     if x == True:
       print('Daddy is live')
-      print(self.bot.get_streams("shadeyg56"))
+      print(bot.get_streams("shadeyg56"))
       data["is_live"] = True
       data = json.dumps(data, indent=4)
       with open('communication.json', 'w') as f:
