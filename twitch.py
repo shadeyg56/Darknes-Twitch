@@ -29,5 +29,6 @@ class Twitch_Bot(tcommands.TwitchBot):
         f.write(data)
   
   loop = asyncio.get_event_loop()
-  loop.run_forever(live())
+  loop.create_task(live())
+  loop.run_forever()
 Twitch_Bot().run()

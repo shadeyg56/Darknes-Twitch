@@ -23,9 +23,13 @@ async def is_live():
 	await asyncio.sleep(1)
 	with open("communication.json") as f:
 		data = json.load(f)
-	if data["is_live"] == True:
-		await bot.change_presence(activity=discord.Streaming(name="Success!", url="https://twitch.tv/shadeyg56"))
-	await asyncio.sleep(5)
+	try:
+		if data["is_live"] == True:
+			await bot.change_presence(activity=discord.Streaming(name="Success!", url="https://twitch.tv/shadeyg56"))
+	except:
+		print("Daddy isn't live ;(")
+	finally:
+		await asyncio.sleep(5)
 
 
 bot.loop.create_task(is_live())
