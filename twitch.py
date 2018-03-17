@@ -8,7 +8,8 @@ import asyncio
 class Twitch_Bot(tcommands.TwitchBot):
   def __init__(self):
     super().__init__(prefix='!', nick='Darkness', token=private.TWITCH_TOKEN, initial_channels=['shadeyg56'])
-    
+    self.loop = asyncio.get_event_loop()
+    self.loop.create_task(self.live())
 
   @tcommands.twitch_command()
   async def test(self, ctx):
@@ -29,7 +30,6 @@ class Twitch_Bot(tcommands.TwitchBot):
       with open('communication.json', 'w') as f:
         f.write(data)
 
-  loop = asyncio.get_event_loop()
-  loop.create_task(self.live())
-  loop.run_forever()
+  
+  self.loop.run_forever()
 Twitch_Bot().run()
