@@ -8,9 +8,7 @@ import asyncio
 class Twitch_Bot(tcommands.TwitchBot):
   def __init__(self):
     super().__init__(prefix='!', nick='Darkness', token=private.TWITCH_TOKEN, initial_channels=['shadeyg56'], client_id=private.TWITCH_CLIENT_ID)
-    self.loop = asyncio.get_event_loop()
     self.loop.create_task(self.live())
-    self.loop.run_forever()
   @tcommands.twitch_command()
   async def test(self, ctx):
     await ctx.send('I am alive')
