@@ -30,6 +30,8 @@ class Twitch_Bot(tcommands.TwitchBot):
         data = json.dumps(data, indent=4)
         with open('communication.json', 'w') as f:
           f.write(data)
+      else:
+        raise SyntaxError
     except:
       pass
     await asyncio.sleep(5)
