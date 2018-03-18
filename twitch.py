@@ -41,6 +41,7 @@ class Twitch_Bot(tcommands.TwitchBot):
       x = await self.is_live('shadeyg56')
       if x == True:
         print('Daddy is live')
+        print(type(data))
         if data["is_live"] == "False":
           data['is_live'] = 'True'
         else:
