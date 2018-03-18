@@ -25,7 +25,7 @@ async def is_live():
 		with open("communication.json") as f:
 			data = json.load(f)
 			try:
-				if data["is_live"] == True:
+				if data['is_live'] == 'True':
 					await bot.change_presence(activity=discord.Streaming(name="Success!", url="https://twitch.tv/shadeyg56"))
 					print("Daddy is live :)")
 				else:
