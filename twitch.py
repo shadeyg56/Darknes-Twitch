@@ -5,6 +5,7 @@ import private
 import json
 import asyncio
 import random
+import ast
 
 class Twitch_Bot(tcommands.TwitchBot):
   def __init__(self):
@@ -47,8 +48,8 @@ class Twitch_Bot(tcommands.TwitchBot):
           pass
       else:
         print("Daddy isn't live ;(")
+        ast.literal_eval(data)
         print(type(data))
-        print(data)
         data["is_live"] = "False"
       with open('communication.json', 'w') as f:
         json.dump(data, f)
