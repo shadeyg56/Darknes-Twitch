@@ -45,6 +45,7 @@ class Twitch_Bot(tcommands.TwitchBot):
         if data["is_live"] == "False":
           data['is_live'] = 'True'
         else:
+          pass
         data = json.dumps(data, indent=4)
         with open('communication.json', 'w') as f:
           f.write(data)
