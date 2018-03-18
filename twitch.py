@@ -39,9 +39,9 @@ class Twitch_Bot(tcommands.TwitchBot):
     await asyncio.sleep(10)
     while not self.loop.is_closed():
       x = await self.is_live('shadeyg56')
-      print(type(data))
       if x == True:
         print('Daddy is live :)')
+        print(type(data))
         if data["is_live"] == "False":
           data['is_live'] = 'True'
         else:
