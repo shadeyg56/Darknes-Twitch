@@ -41,13 +41,19 @@ class Twitch_Bot(tcommands.TwitchBot):
       x = await self.is_live('shadeyg56')
       if x == True:
         print('Daddy is live')
-        print(await self.get_streams(["shadeyg56"]))
-        data['is_live'] = 'True'
+        if data["is_live"] == "False":
+          data['is_live'] = 'True'
+        else:
+          pass
         data = json.dumps(data, indent=4)
         with open('communication.json', 'w') as f:
           f.write(data)
       else:
         print("Daddy isn't live ;(")
+        data["is_live"] = "False"
+        data = json.dumps(data, indent=4)
+        with open('communication.json', 'w') as f:
+          f.write(data)
         await asyncio.sleep(5)
 
   
