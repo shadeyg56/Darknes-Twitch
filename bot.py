@@ -30,6 +30,7 @@ async def is_live():
 					print("Daddy is live :)")
 				else:
 					print("Daddy isn't live ;(")
+					await bot.change_presence(activity=discord.Streaming(name='Watching over the chat until next stream', url='https://www.twitch.tv/shadeyg56'))
 			except:
 				print("Daddy isn't live ;(")
 		await asyncio.sleep(5)
