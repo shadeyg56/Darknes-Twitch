@@ -37,6 +37,7 @@ class Twitch_Bot(tcommands.TwitchBot):
     with open('communication.json') as f:
       data = json.load(f)
     x = await self.is_live("shadeyg56")
+    print(x)
     while not self.loop.is_closed():
       if x == True:
         print('Daddy is live')
