@@ -37,9 +37,9 @@ class Twitch_Bot(tcommands.TwitchBot):
     with open('communication.json') as f:
       data = json.load(f)
     await asyncio.sleep(10)
-    print(type(data))
     while not self.loop.is_closed():
       x = await self.is_live('shadeyg56')
+      print(type(data))
       if x == True:
         print('Daddy is live :)')
         if data["is_live"] == "False":
