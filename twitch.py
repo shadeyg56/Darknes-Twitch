@@ -51,7 +51,7 @@ class Twitch_Bot(tcommands.TwitchBot):
         data["is_live"] = "False"
       data = json.dumps(data, indent=4)
       with open('communication.json', 'w') as f:
-        f.write(data)
+        json.dump(data, f)
       await asyncio.sleep(5)
 
   
