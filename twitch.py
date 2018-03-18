@@ -41,7 +41,7 @@ class Twitch_Bot(tcommands.TwitchBot):
       x = await self.is_live('shadeyg56')
       if x == True:
         print('Daddy is live')
-        print(await self.get_streams("shadeyg56"))
+        print(await self.get_streams(["shadeyg56"]))
         data['is_live'] = 'True'
         data = json.dumps(data, indent=4)
         with open('communication.json', 'w') as f:
