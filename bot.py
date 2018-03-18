@@ -27,6 +27,7 @@ async def is_live():
 			try:
 				if data["is_live"] == True:
 					await bot.change_presence(activity=discord.Streaming(name="Success!", url="https://twitch.tv/shadeyg56"))
+					print("Daddy is live :)")
 				else:
 					print("Daddy isn't live ;(")
 			except:
