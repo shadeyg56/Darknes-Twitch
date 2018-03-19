@@ -49,8 +49,7 @@ class Twitch_Bot(tcommands.TwitchBot):
       else:
         print("Daddy isn't live ;(")
         ast.literal_eval(data)
-        print(type(data))
-        del data["is_live"]
+        print(type(data["is_live"]))
         data["is_live"] = "False"
       with open('communication.json', 'w') as f:
         json.dump(data, f)
